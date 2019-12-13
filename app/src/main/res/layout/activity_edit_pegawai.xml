@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pegawai.EditPegawaiActivity">
+    <TextView
+        android:id="@+id/tv_nip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:text="NIP"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/edt_nip_edit"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_nip_edit"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginBottom="118dp"
+        android:text="Nama"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_jabatan"
+        app:layout_constraintEnd_toStartOf="@+id/edt_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.363" />
+
+    <EditText
+        android:id="@+id/edt_name_edit"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintStart_toStartOf="@+id/edt_nip_edit"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nip_edit" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Email"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edt_email_edit"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_email_edit"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/edt_name_edit"
+        app:layout_constraintTop_toBottomOf="@+id/edt_name_edit" />
+
+    <EditText
+        android:id="@+id/edt_jabatan_edit"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintStart_toStartOf="@+id/edt_email_edit"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email_edit" />
+
+    <TextView
+        android:id="@+id/tv_jabatan_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Jabatan"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edt_jabatan_edit"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_alamat_edit"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintStart_toStartOf="@+id/edt_jabatan_edit"
+        app:layout_constraintTop_toBottomOf="@+id/edt_jabatan_edit" />
+
+    <TextView
+        android:id="@+id/tv_alamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Alamat"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edt_alamat_edit"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rg_gender_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="61dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_alamat_edit">
+
+        <RadioButton
+            android:id="@+id/rb_male_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/rb_female_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="6dp"
+        android:text="Jenis Kelamin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rg_gender_edit" />
+
+    <Button
+        android:id="@+id/btn_submit_edit"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="56dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_gender_edit" />
+</androidx.constraintlayout.widget.ConstraintLayout>

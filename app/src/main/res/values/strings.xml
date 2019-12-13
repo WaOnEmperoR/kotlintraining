@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TrainingKotlin</string>
+    <string name="product_name">Product Name</string>
+    <string name="date">Date</string>
+    <string name="hint_word">Word...</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
+
+    <string name="nip_title">NIP</string>
+    <string name="name_title">Name</string>
+</resources>
