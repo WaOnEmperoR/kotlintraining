@@ -13,7 +13,7 @@ import id.go.bppt.ptik.trainingkotlin.roomsample.Word
 class PegawaiListAdapter internal constructor(
     context: Context,
     private val onClickListener: (View, Pegawai) -> Unit,
-    private val onLongClickListener: (View, Pegawai) -> Unit
+    private val onLongClickListener: (View, Pegawai) -> Boolean
 ) : RecyclerView.Adapter<PegawaiListAdapter.PegawaiViewHolder>() {
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var pegawais = emptyList<Pegawai>()
@@ -44,7 +44,8 @@ class PegawaiListAdapter internal constructor(
         holder.itemView.setOnClickListener {
             view -> onClickListener.invoke(view, current)
         }
-//        holder.itemView.setOnLongClickListener { view -> onLongClickListener }
+
+        holder.itemView.setOnLongClickListener { view -> onLongClickListener.invoke(view, current) }
 
     }
 

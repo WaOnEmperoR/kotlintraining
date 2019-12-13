@@ -2,10 +2,7 @@ package id.go.bppt.ptik.trainingkotlin.pegawai
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioGroup
-import android.widget.Toast
+import android.widget.*
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import id.go.bppt.ptik.trainingkotlin.R
@@ -24,6 +21,7 @@ class EditPegawaiActivity : AppCompatActivity() {
     private lateinit var pegawaiViewModel: PegawaiViewModel
 
     var nip: String = ""
+    var selection: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +38,23 @@ class EditPegawaiActivity : AppCompatActivity() {
         radioGenderView = findViewById(R.id.rg_gender_edit)
         buttonSubmitView = findViewById(R.id.btn_submit_edit)
 
+        radioGenderView.setOnCheckedChangeListener(
+            RadioGroup.OnCheckedChangeListener { group, checkedId ->
+                val radio: RadioButton = findViewById(checkedId)
+                Toast.makeText(applicationContext," On checked change : ${radio.text}",
+                    Toast.LENGTH_SHORT).show()
+
+                var choice = radio.text
+                if (choice == "Male")
+                {
+                    selection = 0
+                }
+                else
+                {
+                    selection = 1
+                }
+            })
+
         pegawaiViewModel = ViewModelProvider(this).get(PegawaiViewModel::class.java)
         pegawaiViewModel.getSingle(nip)
         pegawaiViewModel.singlePegawai?.observe(this, Observer { pegawais -> pegawais?.let {
@@ -48,14 +63,20 @@ class EditPegawaiActivity : AppCompatActivity() {
             editEmailView.setText(it.email)
             editAlamatView.setText(it.alamat)
             editJabatanView.setText(it.jabatan)
+            if (it.gender == 0)
+                radioGenderView.check(R.id.rb_male_edit)
+            else
+                radioGenderView.check(R.id.rb_female_edit)
         } })
+
+
 
         buttonSubmitView.setOnClickListener {
             val pegawai = Pegawai(
                 editNipView.text.toString(),
                 editNameView.text.toString(),
                 editEmailView.text.toString(),
-                0,
+                selection,
                 editAlamatView.text.toString(),
                 editJabatanView.text.toString(),
                 Date().toString()

@@ -55,7 +55,7 @@ abstract class PegawaiRoomDatabase : RoomDatabase() {
             // Delete all content here.
             pegawaiDao.deleteAll()
 
-            var pegawai = Pegawai("1", "Mamas", "mamas@gmail.com", 1, "Haha", "Bos", "2019")
+            var pegawai = Pegawai("1", "Mamas", "mamas@gmail.com", 0, "Haha", "Bos", "2019")
             pegawaiDao.insert(pegawai)
         }
     }

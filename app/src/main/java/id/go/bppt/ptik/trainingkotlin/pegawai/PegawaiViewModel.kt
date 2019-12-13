@@ -37,5 +37,8 @@ class PegawaiViewModel(application: Application) : AndroidViewModel(application)
         repository.update(pegawai)
     }
 
+    fun delete(pegawai: Pegawai) = viewModelScope.launch {
+        repository.delete(pegawai)
+    }
 
 }

@@ -26,7 +26,7 @@ class PegawaiActivity : AppCompatActivity() {
         setContentView(R.layout.activity_pegawai)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview_pegawai)
-        val adapter = PegawaiListAdapter(this, onClickListener = this::viewPegawai)
+        val adapter = PegawaiListAdapter(this, onClickListener = this::viewPegawai, onLongClickListener = this::deletePegawai)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager?
 
@@ -86,5 +86,17 @@ class PegawaiActivity : AppCompatActivity() {
         val intent = Intent(this, EditPegawaiActivity::class.java)
         intent.putExtra("NIP", nip)
         startActivity(intent)
+    }
+
+    fun deletePegawai(view: View, pegawai: Pegawai): Boolean
+    {
+        Toast.makeText(
+            applicationContext,
+            "Delete : " + pegawai.name + " NIP : " +pegawai.nip,
+            Toast.LENGTH_LONG).show()
+
+        pegawaiViewModel.delete(pegawai)
+
+        return true;
     }
 }

@@ -8,4 +8,7 @@
 
     <string name="nip_title">NIP</string>
     <string name="name_title">Name</string>
+
+    <string name="button_insert">Insert</string>
+    <string name="button_update">Update</string>
 </resources>

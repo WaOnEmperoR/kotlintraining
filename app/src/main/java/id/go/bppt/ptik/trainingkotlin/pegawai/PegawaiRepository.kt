@@ -21,8 +21,8 @@ class PegawaiRepository(private val pegawaiDao: PegawaiDao) {
         pegawaiDao.update(pegawai)
     }
 
-    suspend fun delete(nip: String)
+    suspend fun delete(pegawai: Pegawai)
     {
-        pegawaiDao.deleteSingle(nip)
+        pegawaiDao.deleteSingle(pegawai)
     }
 }

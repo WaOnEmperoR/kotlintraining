@@ -18,8 +18,8 @@ interface PegawaiDao {
     @Query("DELETE FROM pegawai_table")
     suspend fun deleteAll()
 
-    @Query("DELETE FROM pegawai_table Where nip = :nip")
-    suspend fun deleteSingle(nip:String)
+    @Delete
+    suspend fun deleteSingle(pegawai: Pegawai)
 
     @Update
     suspend fun update(pegawai: Pegawai)
